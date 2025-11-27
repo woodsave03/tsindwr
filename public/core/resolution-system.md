@@ -25,7 +25,7 @@ All rolls in Sunder will fall under a **Test**. Tests are rolls made associated 
 *\* Success levels with a caveat will involve some sort of cost related to the action taken. This can come in the form of physical retribution, equipment damage, mental repercussion, or narrative detriments (see [[stress-fallout-and-marks|Fallout]]).*
 *\*\* A critical fail, or Miff is the opposite of a Crit; it has the equivalent of two caveats or costs, but your GM may choose to narrate a single, more catastrophic consequence.*
 
-Crits and miffs will always be final and determine the outcome of the initial roll (unless otherwise stated). Sunder uses a variant "Roll Under" system, so Crits occur when a 1 is rolled on the D20, and Miffs occur when a 20 is rolled on the D20.
+Crits and miffs will always be final and determine the outcome of the initial roll (unless otherwise stated). Sunder uses a variant "Roll Under" system, so Crits occur when a player's Potential score value is rolled on the D20, and Miffs occur when a 20 is rolled on the D20.
 
 A player will receive different base success levels based on the Potential they are rolling the Test under. Potentials are both representations of a creature's capabilities, as well as a resource to be managed. Spending resources from a Potential is called expending a **Resistance**, or Resistance Drain. Resistance points can be used to fuel ability features and can be restored through resting and healing.
 
