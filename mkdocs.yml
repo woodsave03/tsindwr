@@ -22,6 +22,19 @@ theme:
     - navigation.top
     - navigation.tracking
     - content.code.copy
+    - navigation.tabs
+    - navigation.expand
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/woodsave03/tsindwr
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/zJEdEy4xtm
+
+copyright: >
+  &copy; 2025 Avery M. Woods -
+  Sunder TTRPG, set in the world of Umbrea
 
 docs_dir: public   # <--- inside the repo
 
@@ -57,11 +70,15 @@ plugins:
   - roamlinks
 
 nav:
-  - The Essence of Truth: index.md
-  - Rules:
-      - Rolling Dice: core/resolution-system.md
-      - Stress & Fallout: core/stress-fallout-and-marks.md
-      - Volatility Dice: core/volatility-and-perks.md
-  - Characters:
-      - Attributes: characters/potentials.md
+  - Lore:
+      - The Essence of Truth: index.md
+  - Ruleset:
+      - Rolling Dice:
+          - Resolution System: core/resolution-system.md
+          - Stress & Fallout: core/stress-fallout-and-marks.md
+          - Volatility Dice: core/volatility-and-perks.md
+      - Characters:
+          - Attributes: characters/potentials.md
 #      - Experience: "characters/Experience Points.md"
+  - Profile:
+      - Preferences: profile/preferences.md

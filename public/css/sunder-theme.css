@@ -15,6 +15,8 @@
 
     /* LINKS – make them pop */
     --md-typeset-a-color:         #C58AFF;  /* link color in text */
+
+    --heading-typeset-h3-color: deepskyblue;
 }
 
 /* Dark mode (slate) */
@@ -31,6 +33,8 @@
     /* --md-default-bg-color: #0E0614; */
 
     --md-typeset-a-color:         #FFE08A;  /* gold links on dark */
+
+    --heading-typeset-h3-color: skyblue;
 }
 
 /* Extra link styling (both schemes) */
@@ -44,4 +48,14 @@
 .md-typeset a:hover,
 .md-typeset a:focus {
     text-decoration-thickness: 0.14em;
+}
+
+.sunder-heading {
+    color: var(--heading-typeset-h3-color);
+}
+
+.lore-subheading {
+    color: grey;
+    text-transform: uppercase;
+    font-size: small;
 }
