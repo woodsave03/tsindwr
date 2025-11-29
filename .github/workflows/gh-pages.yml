@@ -25,6 +25,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for tags
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
