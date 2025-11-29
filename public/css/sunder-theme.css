@@ -240,6 +240,10 @@
 /* === Highlight report popover === */
 
 .sunder-highlight-popover {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
     position: absolute;
     z-index: 1000;
     padding: 0.25rem 0.5rem;
@@ -257,7 +261,8 @@
     border-color: rgba(255, 255, 255, 0.18);
 }
 
-.sunder-highlight-popover .sunder-highlight-btn {
+.sunder-highlight-popover .sunder-highlight-btn,
+.sunder-highlight-popover .sunder-copy-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
