@@ -3,8 +3,8 @@ site_url: https://woodsave03.github.io/tsindwr
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/sunder.png
-  favicon: assets/favicon.ico
+  logo: assets/favicon/sunder-logo.png
+  favicon: assets/favicon/favicon.ico
   font:
     text: "IBM Plex Sans"
     code: "JetBrains Mono"
