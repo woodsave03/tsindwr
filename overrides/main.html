@@ -19,3 +19,13 @@
       </div>
     </div>
 {% endblock %}
+
+{# override the scripts block to add a global version variable #}
+{% block scripts %}
+    {{ super() }}
+    {% if config.extra.sunder_version %}
+        <script>
+            window.SUNDER_VERSION = "{{ config.extra.sunder_version }}";
+        </script>
+    {% endif %}
+{% endblock %}
