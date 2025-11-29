@@ -101,7 +101,7 @@ Deno.serve(async (req: Request) => {
     embeds: [embed],
   };
 
-  const webhookUrl = Deno.env.get("DISCORD_QUESTIONS_WEBHOOK_URL");
+  const webhookUrl = Deno.env.get("DISCORD_WEBHOOK_URL");
   if (!webhookUrl) {
     return new Response("Webhook not configured", { status: 500, headers: corsHeaders });
   }
