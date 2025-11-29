@@ -38,6 +38,7 @@
 }
 
 /* Extra link styling (both schemes) */
+
 .md-typeset a {
     font-weight: 600;
     text-decoration: underline;
@@ -58,6 +59,23 @@
     color: grey;
     text-transform: uppercase;
     font-size: small;
+}
+
+/* === Navbar customization === */
+
+.sunder-header-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.sunder-version {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 0.35rem;
+    opacity: 0.7;
+    vertical-align: baseline;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* === Footer customization === */
