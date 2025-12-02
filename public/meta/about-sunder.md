@@ -26,29 +26,13 @@
     </a>
   </div>
 
-  <!-- Resume Download -->
-  <div class="sunder-resume-section">
-    <a href="../assets/resume.pdf" download class="sunder-btn sunder-btn-accent" aria-label="Download resume as PDF">
-      <i class="fa-solid fa-file-pdf"></i> Download Resume
-    </a>
-  </div>
-
-  <!-- Contact Links -->
+  <!-- Contact Links - Discord is the primary community link -->
   <div class="sunder-contact-links" aria-label="Contact and social links">
-    <a href="mailto:contact@example.com" class="sunder-contact-btn" title="Email" aria-label="Send email">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
     <a href="https://discord.gg/zJEdEy4xtm" target="_blank" rel="noopener" class="sunder-contact-btn" title="Discord" aria-label="Join Discord server">
       <i class="fa-brands fa-discord"></i>
     </a>
-    <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="sunder-contact-btn" title="LinkedIn" aria-label="Visit LinkedIn profile">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/" target="_blank" rel="noopener" class="sunder-contact-btn" title="Twitter/X" aria-label="Visit Twitter profile">
-      <i class="fa-brands fa-x-twitter"></i>
-    </a>
-    <a href="https://mastodon.social/" target="_blank" rel="noopener" class="sunder-contact-btn" title="Mastodon" aria-label="Visit Mastodon profile">
-      <i class="fa-brands fa-mastodon"></i>
+    <a href="https://github.com/woodsave03" target="_blank" rel="noopener" class="sunder-contact-btn" title="GitHub" aria-label="Visit GitHub profile">
+      <i class="fa-brands fa-github"></i>
     </a>
   </div>
 </div>
