@@ -521,3 +521,101 @@
 .sunder-toast i {
     font-size: 1.1em;
 }
+
+/* === Theme toggle switch in header === */
+.sunder-theme-toggle {
+    --sunder-gold: #f2c94c;
+    --sunder-purple: #5b3aa6;
+
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-left: 0.75rem;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+.sunder-theme-toggle-track {
+    position: relative;
+    width: 3rem;
+    height: 1.6rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+/* Light vs dark track background */
+.sunder-theme-toggle[data-scheme="light"] .sunder-theme-toggle-track {
+    background: var(--sunder-gold);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sunder-theme-toggle[data-scheme="dark"] .sunder-theme-toggle-track {
+    background: var(--sunder-purple);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.sunder-theme-toggle-icon {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 0.9rem;
+    height: 0.9rem;
+    z-index: 1;
+}
+
+.sunder-theme-toggle-icon i {
+    font-size: 0.8rem;
+}
+
+/* Tint icons against their respective backgrounds */
+.sunder-theme-toggle[data-scheme="light"] .sunder-theme-toggle-icon--sun i {
+    color: #8a6a00;
+}
+
+.sunder-theme-toggle[data-scheme="light"] .sunder-theme-toggle-icon--moon i {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.sunder-theme-toggle[data-scheme="dark"] .sunder-theme-toggle-icon--sun i {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sunder-theme-toggle[data-scheme="dark"] .sunder-theme-toggle-icon--moon i {
+    color: #f4e9ff;
+}
+
+/* Knob that slides between sun and moon */
+
+.sunder-theme-toggle-knob {
+    position: absolute;
+    top: 0.15rem;
+    left: 0.18rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.18s ease-out;
+}
+
+/* Move knob to the right in dark mode */
+.sunder-theme-toggle[data-scheme="dark"] .sunder-theme-toggle-knob {
+    transform: translateX(1.4rem);
+}
+
+/* Focus/hover */
+.sunder-theme-toggle:focus-visible .sunder-theme-toggle-track,
+.sunder-theme-toggle:hover .sunder-theme-toggle-track {
+    box-shadow: 0 0 0 2px rgba(242, 201, 76, 0.7),
+                0 4px 12px rgba(0, 0, 0, 0.5);
+}
