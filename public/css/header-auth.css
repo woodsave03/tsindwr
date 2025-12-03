@@ -34,6 +34,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--md-default-bg-color);
+}
+
+.user-chevron {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    color: var(--md-default-bg-color);
 }
 
 .user-avatar {
@@ -50,7 +57,7 @@
     background: var(--md-default-bg-color);
     color: var(--md-default-fg-color);
     border-radius: 0.5rem;
-    padding: 0.25rem 0;
+    /*padding: 0.25rem 0;*/
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     z-index: 1000;
 }
@@ -68,12 +75,14 @@
     color: inherit;
     cursor: pointer;
     font-size: 0.85rem;
+
+    border-radius: 0.5rem;
 }
 
 /* Sunder Gold/Purple accents on hover */
 .user-dropdown__item:hover {
-    background-color: rgba(255, 215, 0, 0.08); /* Sunder Gold-ish highlight */
-    border-left: 3px solid #ffd700;
+    background-color: rgba(255, 215, 0, 0.68); /* Sunder Gold-ish highlight */
+    border-left: 5px solid #ffd700;
 }
 
 /* ===== Header alterations to incorporate profile styling ===== */

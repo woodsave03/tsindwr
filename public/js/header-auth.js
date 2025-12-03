@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (bookmarksButton) {
         bookmarksButton.addEventListener('click', async (e) => {
             e.preventDefault();
-            window.location.href = "meta/bookmarks/";
+            window.location = window.SUNDER_BASE_URL + "/meta/bookmarks/";
         });
     }
 });
