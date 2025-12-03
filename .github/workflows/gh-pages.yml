@@ -106,7 +106,7 @@ jobs:
           
           # Read the `discord_announcement_sent` flag, defaulting to fals if missing.
           # Requires `jq` to be installed on the runner (it is by default on ubuntu-latest).
-          DISCORD_SENT=$(js -r '.discord_announcement_sent // false' "$NOTES_FILE")
+          DISCORD_SENT=$(jq -r '.discord_announcement_sent // false' "$NOTES_FILE")
           
           if [ "$DISCORD_SENT" = "true" ]; then
             echo "Release notes for ${TAG} have already been sent to Discord, skipping announcement."
