@@ -59,6 +59,7 @@ jobs:
           echo "tag_full=${TAG}" >> $GITHUB_OUTPUT
           echo "tag_version=${BASE}" >> $GITHUB_OUTPUT
           echo "tag_patch=${PATCH}" >> $GITHUB_OUTPUT
+          echo "tag_feature=v{MAJOR}.${MINOR}.0" >> $GITHUB_OUTPUT
           
           if [ "$PATCH" -eq 0 ]; then
             echo "announce_release=true" >> $GITHUB_OUTPUT
@@ -86,12 +87,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
 
-      - name: Announce new release in Discord
-        if: steps.version.outputs.announce_release == 'true'
+      - name: Send release notes to Supabase / Discord (idempotent)
         env:
           SUPABASE_RELEASE_FUNCTION_URL: ${{ secrets.SUPABASE_RELEASE_FUNCTION_URL }}
         run: |
-          TAG="${{ steps.version.outputs.tag_full }}"
+          set -euo pipefail
+          
+          TAG="${{ steps.version.outputs.tag_feature }}"
           NOTES_FILE="release-notes/${TAG}.json"
           
           if [ ! -f "$NOTES_FILE" ]; then
@@ -99,8 +101,29 @@ jobs:
             exit 0
           fi
           
-          echo "Sending release notes from ${NOTES_FILE} to Supabas..."
+          # Read the `discord_announcement_sent` flag, defaulting to fals if missing.
+          # Requires `jq` to be installed on the runner (it is by default on ubuntu-latest).
+          DISCORD_SENT=$(js -r '.discord_announcement_sent // false' "$NOTES_FILE")
+          
+          if [ "$DISCORD_SENT" = "true" ]; then
+            echo "Release notes for ${TAG} have already been sent to Discord, skipping announcement."
+            exit 0
+          fi
+          
+          echo "Sending release notes from ${NOTES_FILE} to Supabase..."
           
           curl -sS -X POST "$SUPABASE_RELEASE_FUNCTION_URL" \
             -H "Content-Type: application/json" \
             -d @"$NOTES_FILE"
+          
+          echo "Marking discord_annoucement_sent as true in ${NOTES_FILE}..."
+          tmpfile="$(mktemp)"
+          jq '.discord_announcement_sent = true' "$NOTES_FILE" > "$tmpfile"
+          mv "$tmpfile" "$NOTES_FILE"
+          
+          # Commit the updated release notes so we don't send again next run
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$NOTES_FILE"
+          git commit -m "Mark Discord announcement sent for ${TAG} release notes" || echo "No changes to commit"
+          git push origin main
